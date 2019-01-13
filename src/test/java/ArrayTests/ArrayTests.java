@@ -6,9 +6,13 @@ import ex04_average.AverageCalc;
 import ex05_checkSpecificValue.CheckSpecificValue;
 import ex06_checkSpecificValueIndex.CheckSpecificValueIndex;
 import ex07_removeElement.RemoveElement;
+import ex08_copyArray.Copyarray;
+import ex09_InsertIntoPosition.InsertIntoPosition;
 import ex_01.ArraysEx;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.Arrays;
 
 public class ArrayTests {
 
@@ -106,6 +110,27 @@ public class ArrayTests {
         int arryToSend[] = {1,5,6,9,2,4};
         String expectedString = "[1, 5, 6, 9, 2]";
         String newString = value.removeSpecificValue(4,arryToSend);
+        Assert.assertEquals(expectedString,newString);
+    }
+
+    @Test
+    public void copyArray(){
+        Copyarray value = new Copyarray();
+        int arryToSend[] = {1,5,6,9,2,4};
+        String expectedString = "[1, 5, 6, 9, 2, 4]";
+        String newString = value.removeSpecificValue(arryToSend);
+        System.out.println(newString);
+        Assert.assertEquals(expectedString,newString);
+    }
+
+    @Test
+    public void insetIntoSpecificIndex(){
+        InsertIntoPosition value = new InsertIntoPosition();
+        int arryToSend[] = {1,5,6,9,2,4};
+        String expectedString = "[1, 8, 5, 6, 9, 2, 4]";
+        String newString = value.removeSpecificValue(8,1,arryToSend);
+        System.out.println("Old Array " + Arrays.toString(arryToSend));
+        System.out.println("New Array " + newString);
         Assert.assertEquals(expectedString,newString);
     }
 
